@@ -8,7 +8,4 @@ Connect to 192.168.1.212...
 5. Hitman™
 6. DOTA 2
 7. Mad Max`
-
-let test = largestring.split("\n")
-console.log(test)
-
+console.log(largestring)
