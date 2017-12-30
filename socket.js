@@ -15,6 +15,16 @@ module.exports = {
                     socket.emit("list",data)
                 })
 
+                
+                socket.on("startGame",function(game){
+                        data.StartCmd(game,function(data){
+                            socket.emit("gamestared","starting Game");
+
+                        });
+
+                });
+
+
         })
 
     }

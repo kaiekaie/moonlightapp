@@ -17,6 +17,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 app.use('/scripts', express.static(__dirname + '/node_modules/socket.io-client'));
+app.use('/flipster', express.static(__dirname + '/node_modules/jquery.flipster/dist/jquery.flipster.min.js'));
+app.use('/flipster.css', express.static(__dirname + '/node_modules/jquery.flipster/dist/jquery.flipster.min.css'));
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/jquery.min.js'));
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

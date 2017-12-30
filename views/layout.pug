@@ -2,10 +2,12 @@ doctype html
 html
   head
     title= title
+    link(rel='stylesheet', href='/flipster.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
  
   body
     block content
-    script(src='/scripts/dist/socket.io.js')
-    script(src='/jquery')
-    script(src='/js.js')
+  script(src='/scripts/dist/socket.io.js')
+  script(src='/jquery')
+  script(src='/flipster')
+  script(src='/js.js')  

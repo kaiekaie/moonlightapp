@@ -14,29 +14,18 @@ body {
 }
 
 
-.slider {
-  width: 100%;
-  min-height: 400px;
-  position: relative;
-  overflow: hidden;
-}
-ul {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-
- 
-}
-
-li {
-  flex: auto;
-  text-align: center;
-}
 
 
 .active{
   
           background: #ff0;
+      }
+
+      .item{
+        width: 400px;
+    
+        font-size: 30pt;
+
       }
 
 
