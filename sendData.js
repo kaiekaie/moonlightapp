@@ -19,7 +19,7 @@ let SendData  = new Promise((resolve, reject) => {
     let dev = 'node sendcmd.js';
     let testarray = [];
     let prod = 'moonlight list'
-    let fc = process.env.NODE_ENV.match('development') ? dev : prod;
+    let fc = process.env.NODE_ENV && process.env.NODE_ENV.match('development') ? dev : prod;
     console.log(fc);
     setTimeout(() => {
                         getDataFunction(fc, element =>{
