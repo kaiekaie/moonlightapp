@@ -27,12 +27,14 @@ $(document).ready(function () {
   let arr = $("#gamelist li");
  
         if(e === "left"){
+          console.log("left"); 
           lnf--;
           if(lnf <= 1){
             lnf = lengt - 1;
           }
 
           }else{
+            console.log("right"); 
             lnf++;
             if(lnf >= lengt -1){
               

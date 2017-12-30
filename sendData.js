@@ -1,3 +1,5 @@
+
+
 var cmd=require('node-cmd');
 
 
@@ -5,7 +7,7 @@ let getDataFunction = function(data, callback){
     cmd.get(
         data,
         function(err, data, stderr){
-    if(err)reject(err)
+    if(err)callback(false)
             callback(data);
 
         }
@@ -14,12 +16,17 @@ let getDataFunction = function(data, callback){
 }
 
 let SendData  = new Promise((resolve, reject) => {
-    
-                        getDataFunction('node sendcmd.js', element =>{
-    
+    let dev = 'node sendcmd.js';
+    let testarray = [];
+    let prod = 'moonlight list'
+    let fc = process.env.NODE_ENV.match('development') ? dev : prod;
+    console.log(fc);
+    setTimeout(() => {
+                        getDataFunction(fc, element =>{
+                                if(element){
                             let test = element.split("\n")
                             test.splice(0,2)
-                            let testarray = [];
+                      
                             var modifiedArr = test.forEach((element,i) => {
                                 if(element != ""){
                             
@@ -29,9 +36,14 @@ let SendData  = new Promise((resolve, reject) => {
                                  
                                 }
                             });
+
+                        }else {
+                            reject(element)
+                        }
                             resolve(testarray)
                       
                         })
+                    },10)
         })
 
         let StartCmd  = function(file) {
