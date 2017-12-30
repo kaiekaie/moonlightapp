@@ -47,7 +47,7 @@ let SendData = new Promise((resolve, reject) => {
 })
 
 let StartCmd = function (app, callback) {
-    let script = `moonlight stream "${app}" -1080 -surround`
+    let script = `moonlight stream -app "${app}" -1080 -surround`
     getDataFunction(script, element => {
         console.log(element);
         callback("done")
