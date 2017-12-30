@@ -18,6 +18,11 @@ function canGame() {
 let lnf = 0;
 let pressed = false;
 $(document).ready(function () {
+
+  socket.on("message",function(Message){
+
+$("body").append(Message);
+  });
   let myFlipster;
   socket.on("list", function (data) {
     console.log(data)
@@ -49,13 +54,15 @@ $(document).ready(function () {
 
   }
   let StartGame = function () {
-    console.log(pressed);
+ 
     if(!pressed){
+      console.log(pressed)
+      pressed = true;
     let data = $("#flat .flipster__item.flipster__item--current").data("value");
     $("#flat .flipster__item.flipster__item--current").addClass("clicked");
-    pressed = true;
-    console.log(data,pressed);
-socket.emit("startGame",data);
+  
+
+    socket.emit("startGame",data); 
 
     setTimeout(() => {
       pressed = false;
@@ -90,7 +97,25 @@ socket.emit("startGame",data);
     for (var i = 0; i < gp.buttons.length; i++) {
 
       if (gp.buttons[i].pressed) {
-        StartGame();
+        console.log(i);
+        switch(i){
+          case 4 :
+          case 6 :
+          case 14 :
+          case 13 :
+          realFunction("left")
+          break;
+          case 5 :
+          case 7 : 
+          case 15 :
+          case 12 : 
+          realFunction("right")
+          break;
+          default : 
+          StartGame();
+        }
+       
+  
 
       }
 

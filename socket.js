@@ -13,14 +13,33 @@ module.exports = {
                 data.SendData.then(function(data){
                     console.log(data)
                     socket.emit("list",data)
+                }).catch((err) => {
+                    console.log(err)
+                    socket.emit("message","Error")
                 })
 
                 
                 socket.on("startGame",function(game){
+                   
                         data.StartCmd(game,function(data){
-                            socket.emit("gamestared","starting Game");
+                            console.log("click")
+                            socket.emit("message",data);
 
                         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 });
 
