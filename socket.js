@@ -92,12 +92,12 @@ module.exports = {
                 })
 
             })
-let emitgame = setInterval(() => {
-    if(gameisRunning){
-        socket.emit("gameIsRunning", true);
-        socket.emit("message", "Game In progress");
-    }
-},1000);
+                    let emitgame = setInterval(() => {
+                        if(gameisRunning){
+                            socket.emit("gameIsRunning", true);
+                            socket.emit("message", "Game In progress");
+                        }
+                    },1000);
             socket.on("startGame", function (game) {
                 socket.emit("message", "Starting Game");
                 gameisRunning = true;

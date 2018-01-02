@@ -91,7 +91,7 @@ return null;
 
   });
   let StartGame = function () {
- 
+ console.log(GameInProgress);
     if(!GameInProgress){
       console.log(GameInProgress)
       GameInProgress = true;
@@ -101,7 +101,7 @@ return null;
 
   }else {
     GameInProgress = false;
-   
+    socket.emit("endGame");
   }
   
   }
