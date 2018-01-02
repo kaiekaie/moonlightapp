@@ -94,8 +94,8 @@ module.exports = {
                 socket.emit("message", "starting game click again to end game");
          
                 data.StartCmd(game, function (data) {
-                    console.log("click")
-                
+         
+                    socket.emit("message", "game Ended");
 
                 });
 
