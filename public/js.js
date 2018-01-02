@@ -98,7 +98,7 @@ return null;
 
   }else {
     GameInProgress = false;
-   
+      socket.emit("endGame");
   }
   
   }

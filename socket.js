@@ -82,7 +82,13 @@ module.exports = {
 
             }
       
-     
+            socket.on("endGame",function(){
+                data.endGame(function(){
+                    socket.emit("message", "game Ended");
+
+                })
+
+            })
 
             socket.on("startGame", function (game) {
                 socket.emit("message", "starting game click again to end game");
