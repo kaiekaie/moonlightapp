@@ -1,9 +1,12 @@
 
 
+
+
 let JsonDB = require('node-json-db');
 let db = new JsonDB("gameDb", true, false);
 module.exports = {
     socketfun: function (server) {
+        let gameisRunning = false;
         let io = require("socket.io").listen(server);
         let data = require("./sendData")
         const igdb = require('igdb-api-node').default;
@@ -85,18 +88,23 @@ module.exports = {
             socket.on("endGame",function(){
                 data.endGame(function(){
                     socket.emit("message", "game Ended");
-
+                    gameisRunning = false;
                 })
 
             })
-
+let emitgame = setInterval(() => {
+    if(gameisRunning){
+        socket.emit("gameIsRunning", true);
+        socket.emit("message", "Game In progress");
+    }
+},1000);
             socket.on("startGame", function (game) {
-                socket.emit("message", "starting game click again to end game");
-         
+                socket.emit("message", "Starting Game");
+                gameisRunning = true;
                 data.StartCmd(game, function (data) {
-         
+                    gameisRunning = false;
                     socket.emit("message", "game Ended");
-
+         
                 });
 
 

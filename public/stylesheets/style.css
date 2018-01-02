@@ -22,6 +22,10 @@ div{
   vertical-align:middle;
 }
 
+#messagebox{
+color: #fff;
+
+}
 .active{
   
           background: #ff0;

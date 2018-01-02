@@ -1,6 +1,11 @@
 
 
+
 var cmd = require('node-cmd');
+
+
+let devenviroment = process.env.NODE_ENV && process.env.NODE_ENV.match('development') ? true : false;
+
 
 let getDataFunction = function (data, callback) {
 
@@ -19,11 +24,11 @@ let getDataFunction = function (data, callback) {
 }
 
 let SendData = new Promise((resolve, reject) => {
-    let dev = 'node sendcmd.js';
-    let testarray = [];
-    let prod = 'moonlight list'
-    let fc = process.env.NODE_ENV && process.env.NODE_ENV.match('development') ? dev : prod;
 
+    let testarray = [];
+    let dev = 'node sendcmd.js';
+    let prod = 'moonlight list'
+let fc = devenviroment ? dev : prod;
     setTimeout(() => {
   
         getDataFunction(fc, element => {
@@ -58,7 +63,15 @@ let StartCmd = function (app, callback) {
     let script = `moonlight stream -app "${app}" -1080 -surround`;
     getDataFunction(script, (element) => {
         console.log(element);
-        callback("done")
+        if(devenviroment){
+            setTimeout(() => {
+
+                callback("done")
+            },10000)
+        }else {
+            callback("done")
+        }
+     
     })
 }
 

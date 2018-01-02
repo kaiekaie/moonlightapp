@@ -86,7 +86,10 @@ return null;
   }
 
 
-  
+  socket.emit("gameIsRunning",function(){
+    GameInProgress = true;
+
+  });
   let StartGame = function () {
  
     if(!GameInProgress){
@@ -98,11 +101,11 @@ return null;
 
   }else {
     GameInProgress = false;
-      socket.emit("endGame");
+   
   }
   
   }
-
+socket.on("gajme")
 
   function controllLeftRight(num) {
     let coords = {};
