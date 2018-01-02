@@ -9,24 +9,36 @@
   padding: 0;
 }
 body {
-  
+  text-align: center;
  margin:auto; 
+ background-color: #051021;
 }
 
+#pusher{
+  height: 25vh;
+}
 
-
+div{
+  vertical-align:middle;
+}
 
 .active{
   
           background: #ff0;
       }
 
-      .item{
-        width: 400px;
-    
-        font-size: 30pt;
+      #game{
+
+        min-height: 374px;
+        font-size: 60px;
 
       }
 
-
-
+      @media screen and (max-width: 480px) {
+    
+        #pusher{
+          height: auto;
+        }
+      }
+  
+  

@@ -2,7 +2,6 @@
 
 var cmd = require('node-cmd');
 
-
 let getDataFunction = function (data, callback) {
 
     cmd.get(
@@ -35,7 +34,7 @@ let SendData = new Promise((resolve, reject) => {
 
                 var modifiedArr = test.forEach((element, i) => {
                     if (element != "") {
-
+                 
                         let nr = element.replace(/(\d\.\s)/gi, "");
                         testarray.push(nr);
 
@@ -64,11 +63,21 @@ let StartCmd = function (app, callback) {
 }
 
 
+let endGame = function (callback) {
+    let script = `moonlight quit`;
+    getDataFunction(script, (element) => {
+        console.log(element);
+        callback("done")
+    })
+}
+
+
 
 
 module.exports = {
 
     SendData: SendData,
-    StartCmd: StartCmd
+    StartCmd: StartCmd,
+    endGame : endGame
 
 }
