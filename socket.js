@@ -88,7 +88,7 @@ module.exports = {
                 console.log(DbGames);
                 socket.emit("list", DbGames)
             } catch (e) {
-      
+                socket.emit("message", "No games");
 
             }
             socket.on("checkdata", function (data) {
