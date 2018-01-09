@@ -2,8 +2,8 @@
 
 Creates a web server Using <a href="https://github.com/irtimmer/moonlight-embedded">Moonlight-Embedded<a/> with a list of games that can be started from the browser or mobile.
 
-<p>You must pair the computers</p>
-
+<p>You must pair the computers beforehand</p>
+<p>You can use <a href="https://github.com/igdb/igdb-api-node">game database api</a> to get the images from the game</p> 
 <img src="./screenshot.png" />
 <h3>Usage:</h3>
 <ul>

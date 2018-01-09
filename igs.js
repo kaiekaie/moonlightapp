@@ -1,24 +1,4 @@
-    const igdb = require('igdb-api-node').default;
-// module.exports = {
-
-// client: null,
-// init: () => {
-//     try {
-//         let key = require('./.gameDbConfig');
-//         console.log(key);
-//          client = igdb(key);
-        
-//     }catch(e){
-
-
-//     }
-
-
-// }
-
-
-// }
-
+const igdb = require('igdb-api-node').default;
 let igdapi = function(){
 let client = null;
 try {
