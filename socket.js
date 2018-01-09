@@ -110,7 +110,6 @@ module.exports = {
                 })
 
             })
-      
 
             socket.on("startGame", function (game) {
                 socket.emit("message", "Starting Game");

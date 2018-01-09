@@ -2,6 +2,7 @@
 
 Creates a web server Using <a href="https://github.com/irtimmer/moonlight-embedded">Moonlight-Embedded<a/> with a list of games that can be started from the browser or mobile.
 
+<p>You must pair the computers</p>
 
 <img src="./screenshot.png" />
 <h3>Usage:</h3>
